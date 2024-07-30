@@ -1,0 +1,21 @@
+ul {
+  padding-inline-start: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+.gallery {
+  flex-wrap: wrap;
+  display: inline-flex;
+  justify-content: center;
+  row-gap: 24px;
+  column-gap: 24px;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+}
