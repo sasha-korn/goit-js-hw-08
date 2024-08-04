@@ -21,6 +21,10 @@ ul {
 }
 
 .gallery-link:hover {
+  cursor: default;
+}
+
+.gallery-image:hover {
   transform: scale(1.05);
   cursor: url(/icon.svg), auto;
 }
