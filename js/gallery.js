@@ -71,7 +71,7 @@ const createImageTemplate = (imageEl) => {
     <img
       class="gallery-image"
       src="${imageEl.preview}"
-      data-source="${imageEl.original}";
+      data-source="${imageEl.original}"
       alt="${imageEl.description}"
     />
   </a>
@@ -83,3 +83,26 @@ const imageTemplate = images
   .join("");
 const galleryWrapper = document.querySelector(".gallery");
 galleryWrapper.innerHTML = imageTemplate;
+
+const onImageClick = (event) => {
+  event.preventDefault();
+  if (event.target === event.currentTarget) {
+    return;
+  }
+
+  const imageSrc = event.target.getAttribute("data-source");
+  const imageAlt = event.target.getAttribute("alt");
+
+  const instance = basicLightbox.create(`
+<img style="width:1112px; height:640px;"
+      class="imageFullSize"
+     src="${imageSrc}"
+     alt="${imageAlt}"
+/>
+
+`);
+
+  instance.show();
+};
+
+galleryWrapper.addEventListener("click", onImageClick);

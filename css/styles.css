@@ -19,3 +19,8 @@ ul {
   width: 360px;
   height: 200px;
 }
+
+.gallery-link:hover {
+  transform: scale(1.05);
+  cursor: url(/icon.svg), auto;
+}
